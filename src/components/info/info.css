@@ -1,0 +1,58 @@
+@import url(../styles/globals.css);
+
+
+.info__part1 {
+    display: flex;
+    margin-bottom: 100px;
+}
+
+.info__part1-image {
+    margin-left: 250px;
+    margin-right: 40px;
+}
+
+.info__part1-text-title {
+    margin-top: 20px;
+    font-family: "Poppins-Medium";
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.info__part1-text-pharagraph {
+    width: 600px;
+    font-size: 18px;
+    font-family: "Poppins-Regural";
+    color: #7A7A7A;
+}
+
+.info__part2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 90px;
+}
+
+.info__part2-column1,
+.info__part2-column2,
+.info__part2-column3 {
+  align-items: center;
+  text-align: center;
+}
+
+.info__part2-image {
+  margin-bottom: 30px;
+}
+
+.info__part2-text-title,
+.info__part2-text-pharagraph {
+    width: 260px;
+}
+
+.info__part2-text-title {
+    margin-bottom: 10px;
+    font-family: "Poppins-Medium";
+}
+
+.info__part2-text-pharagraph {
+    font-family: "Poppins-Regural";
+    color: #7A7A7A;
+}
