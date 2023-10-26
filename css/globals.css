@@ -1,16 +1,4 @@
 @font-face {
-    font-family: "Helvetica-Bold";
-    src: url("../fonts/Helvetica-Bold.woff") format("woff2"),
-        url("../fonts/Helvetica-Bold.woff2") format("woff");
-}
-
-@font-face {
-    font-family: "Avenir Regural";
-    src: url("../fonts/Avenir Regular.woff2") format("woff2"),
-        url("../fonts/Avenir Regular.woff") format("woff");
-}
-
-@font-face {
     font-family: "Autumn in November";
     src: url("../fonts/Autumn in November.woff2") format("woff2"),
         url("../fonts/Autumn in November.woff") format("woff");
