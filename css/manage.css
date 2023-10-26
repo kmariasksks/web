@@ -1,0 +1,145 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+    justify-self: left;
+    margin-top: 40px;
+    margin-left: -35px;
+}
+
+.container {
+    display: flex;
+}
+
+.side__title {
+    font-size: 30px;
+    font-family: "Inter-Regural";
+    color: #335c67;
+    margin-top: -20px;
+    margin-left: 60px;
+}
+
+.manage__sort {
+    font-size: 20px;
+    font-family: "Inter-Medium";
+    color: #335c67;
+    margin-top: 29px;
+}
+
+.horizontal__line {
+    border: none;
+    background-color: #b9bbbf;
+    color: #b9bbbf;
+    height: 2px;
+    width: 330px;
+    margin-top: 30px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+.side-line {
+    /* border: none; */
+    background-color: #b9bbbf;
+    color: #b9bbbf;
+    height: 500px;
+    width: 1px;
+    margin-left: 400px;
+    margin-top: -230px;
+    border-radius: 70px;
+}
+
+/* .item__block {
+    width: 100px;
+    height: 150px;
+    margin-right: 135px;
+    margin-top: 50px;
+} */
+
+.switch {
+    margin-top: -20px;
+    /* margin-left: 300px; */
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+.form-label {
+    font-size: 20px;
+    font-family: "Inter-Medium";
+    color: #335c67;
+}
+
+.count__button {
+    margin-right: 10px;
+    padding: 13px 50px 10px 20px;
+    border: 2px solid #540b0c;
+    border-radius: 3px;
+    font-family: "Inter-Medium";
+    color: #335c67;
+    font-size: 17px;
+    font-weight: 800;
+    margin-left: 100px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.count__result {
+    margin-top: 15px;
+    font-size: 20px;
+    font-family: "Inter-Regural";
+    color: #335c67;
+}

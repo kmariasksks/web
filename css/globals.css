@@ -10,6 +10,24 @@
         url("../fonts/Avenir Regular.woff") format("woff");
 }
 
+@font-face {
+    font-family: "Autumn in November";
+    src: url("../fonts/Autumn in November.woff2") format("woff2"),
+        url("../fonts/Autumn in November.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Inter-Medium";
+    src: url("../fonts/Inter-Medium.woff2") format("woff2"),
+        url("../fonts/Inter-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Inter-Regural";
+    src: url("../fonts/Inter-Regular.woff2") format("woff2"),
+        url("../fonts/Inter-Regular.woff") format("woff");
+}
+
  a {
     text-decoration: none;
     color: unset;
@@ -27,7 +45,7 @@ li {
 }
 
 button {
-    border: 0;
+    background: none;
     cursor: pointer;
 }
 

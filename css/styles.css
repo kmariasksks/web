@@ -4,20 +4,6 @@
 
 @import "./header.css";
 
-@import "./hero.css";
+@import "./manage.css";
 
-@import "./intro.css";
-
-@import "./features.css";
-
-@import "./footer.css";
-
-@import "../adaptive/hero_320px.css";
-
-@import "../adaptive/intro_320px.css";
-
-@import "../adaptive/features_320px.css";
-
-@import "../adaptive/footer_320px.css";
-
-@import "../adaptive/header_320px.css";
+@import "./assortment.css";
