@@ -1,0 +1,58 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 600px;
+}
+
+.header__nav ul {
+    display: flex;
+}
+
+input {
+    display: none;
+}
+
+ .menu {
+    margin-right: 590px;
+} 
+
+.header__nav-item1 {
+    font-family: "Avenir Regural";
+    color: #212353;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-right: 2.5em;
+    margin-left: 7.5625em;
+    margin-top: 35px;
+}
+
+.header__nav-item2 {
+    font-family: "Avenir Regural";
+    color: #4B5D68;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-right: 2.5em;
+    margin-top: 35px;
+}
+
+.header__logo {
+    margin-top: 25px;
+
+}
+
+.header__request-demo {
+    width: 210px;
+    height: 60px;
+    border-radius: 50px;
+    background: transparent;
+    box-shadow: 0px 5px 5px 0px rgba(75, 93, 104, 0.10);
+    font-family: "Avenir Regural", Arial, sans-serif;
+    color: #4B5D68;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-top: 15px;
+}
+
+.arrow {
+    margin-left: 1rem;
+}
