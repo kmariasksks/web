@@ -1,0 +1,26 @@
+
+
+.info__part1 {
+    display: flex;
+    margin-bottom: 150px;
+}
+
+.info__part1-image {
+    margin-left: 250px;
+    margin-right: 40px;
+}
+
+.info__part1-text-title {
+    margin-top: 20px;
+    font-family: "Poppins-Medium";
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.info__part1-text-pharagraph {
+    width: 600px;
+    font-size: 18px;
+    font-family: "Poppins-Regural";
+    color: #7A7A7A;
+}
+
