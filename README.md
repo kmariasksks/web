@@ -24,3 +24,7 @@
 ### Лабораторна робота №6 (Варіант 9)
 Посилання на вітку (https://github.com/kmariasksks/web/tree/lab6)
 ***
+
+### Лабораторна робота №7 (Варіант 9)
+Посилання на вітку (https://github.com/kmariasksks/web/tree/lab7)
+***
