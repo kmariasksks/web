@@ -1,68 +1,85 @@
-import './catalogFilters.css';
+import React, { useState } from 'react';
+import { ApplyButton, LabelPrice, LabelType, LabelMaterial, Labels, FiltersAll } from "./CatalogFilters.styled.jsx";
+import "./catalogFilters.css"
 
+const CatalogFilter = ({ applyFilter }) => {
+  const [minPrice] = useState("");
+  const [maxPrice] = useState("");
+  const [sortBy] = useState("");
+  const [searchInput, setSearchInput] = useState("");
+  const [selectedType, setSelectedType] = useState("Any");
+  const [selectedMaterial, setSelectedMaterial] = useState("Any");
+  const [selectedPriceRange, setSelectedPriceRange] = useState("Any");
 
-const CatalogFilters = () => {
-    const typeOptions = [
-        { value: "type", label: "Any type" },
-        { value: "type", label: "Computer Desk" },
-        { value: "type", label: "Kitchen Table" },
-        { value: "type", label: "Coffee Table" },
-    ];
+  const handleApplyClick = () => {
+    applyFilter({
+      minPrice,
+      maxPrice,
+      sortBy,
+      searchInput,
+      type: selectedType,
+      material: selectedMaterial,
+      priceRange: selectedPriceRange, 
+    });
+  };
 
-    const priceOptions = [
-        { value: "price", label: "Any price" },
-        { value: "price", label: "up to 1000$" },
-        { value: "price", label: "up to 2000$" },
-        { value: "price", label: "more than 2000$" },
-    ];
+  return (
+    <div>
+      <FiltersAll>
+      <LabelPrice>
+        Price:
+        <select
+          value={selectedPriceRange}
+          onChange={(e) => setSelectedPriceRange(e.target.value)} className='price__select'
+        >
+          <option value="Any">Any Price</option>
+          <option value="0-1000">Up to $1000</option>
+          <option value="1000-2000">$1000 - $2000</option>
+          <option value="2000">Above $2000</option>
+        </select>
+      </LabelPrice>
 
-    const materialOptions = [
-        { value: "material", label: "Any material" },
-        { value: "material", label: "Wood" },
-        { value: "material", label: "Glass" },
-    ];
+      <LabelType>
+        Type:
+        <select
+          value={selectedType}
+          onChange={(e) => setSelectedType(e.target.value)} className='type__select'
+        >
+          <option value="Any">Any Type</option>
+          <option value="Computer Desk">Computer Desk</option>
+          <option value="Kitchen Table">Kitchen Table</option>
+          <option value="Coffee Table">Coffee Table</option>
+        </select>
+      </LabelType>
 
-    return (
-        <section className="filters">
-            <div className="filters__all">
+      <LabelMaterial>
+        Material:
+        <select
+          value={selectedMaterial}
+          onChange={(e) => setSelectedMaterial(e.target.value)} className='material__select'
+        >
+          <option value="Any">Any Material</option>
+          <option value="Wood">Wood</option>
+          <option value="Glass">Glass</option>
+        </select>
+      </LabelMaterial>
 
-                <div className='type'>
-                    <label htmlFor="filters__by-type" className="filters__by-type">Filter by type:</label>
-                    <select id="filters__by-type" className="filters__by-type" name="type">
-                        {typeOptions.map(option => (
-                            <option key={option.value} value={option.value}>
-                                {option.label}
-                            </option>
-                        ))}
-                    </select>
-                </div>
+      <Labels>
+        Search:
+        <input
+          type="text"
+          name="searchInput"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+        />
+      </Labels>
 
-                <div className='price'>
-                    <label htmlFor="filters__by-price" className="filters__by-price">Filter by price:</label>
-                    <select id="filters__by-price" className="filters__by-price" name="price">
-                        {priceOptions.map(option => (
-                            <option key={option.value} value={option.value}>
-                                {option.label}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-
-                <div className='material'>
-                    <label htmlFor="filters__by-material" className="filters__by-material">Filter by material:</label>
-                    <select id="filters__by-material" className="filters__by-material" name="material">
-                        {materialOptions.map(option => (
-                            <option key={option.value} value={option.value}>
-                                {option.label}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-
-                <button type="button" className="apply-button" id="apply-button"><a>Apply</a></button>
-            </div>
-        </section>
-    );
+      <ApplyButton onClick={handleApplyClick}>
+        <p>Apply</p>
+      </ApplyButton>
+      </FiltersAll>
+    </div>
+  );
 };
 
-export default CatalogFilters;
+export default CatalogFilter;

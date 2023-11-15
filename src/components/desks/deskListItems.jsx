@@ -1,12 +1,14 @@
-import DeskList from "./deskList";
-import "./deskList2.css";
+import React from 'react';
+import DeskList from './deskList';
+import './deskListItems.css';
 
-const DeskList2 = ({ data = [] }) => {
+const DeskList2 = ({ data }) => {
     return (
         <section className="list2">
             <div className="list2__items">
                 {data.map(({ id, imageSrc, type, description, material, price }, idx) => (
                     <DeskList
+                        key={id}
                         id={id}
                         imageSrc={imageSrc}
                         type={type}
@@ -17,6 +19,7 @@ const DeskList2 = ({ data = [] }) => {
                 ))}
             </div>
         </section>
+        
     );
 };
 
