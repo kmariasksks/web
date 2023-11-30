@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import ItemsHomePage from "../itemsHomePage/itemsHomePage";
 import Button from "../button/button";
+import Axios from 'axios';
+
 
 const info2Data = [
     {
@@ -45,6 +47,15 @@ const info2Data = [
 const Info2 = () => {
     const [showMore, setShowMore] = useState(false);
 
+    const sendToServer = async () => {
+        try {
+            await Axios.post('/api/saveInfo2Data', { data: info2Data });
+            console.log('Data sent to server successfully!');
+        } catch (error) {
+            console.error('Error sending data to server:', error);
+        }
+    };
+
     return (
         <section className="info2">
             <div className="info__part2">
@@ -58,7 +69,7 @@ const Info2 = () => {
                     />
                 ))}
             </div>
-            <Button showMore={showMore} setShowMore={setShowMore} />
+            <Button showMore={showMore} setShowMore={setShowMore} onClick={sendToServer} />
         </section>
     );
 };

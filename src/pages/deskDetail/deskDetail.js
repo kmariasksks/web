@@ -1,20 +1,63 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import deskData from '../catalog/catalogData';
-import "./deskDetail.css"
+import { getDeskInfo } from '../../api'; 
 import { LabelCount, LabelColor } from "./deskDetail.styled.jsx";
 import { NavLink } from 'react-router-dom';
+import './deskDetail.css'
+import Loader from '../../loader/loader.jsx';
+import compDesk1 from '../catalog/desksImages/compDesk1.jpg';
+import kitDesk1 from '../catalog/desksImages/kitDesk1.jpg';
+import cofDesk1 from '../catalog/desksImages/cofDesk1.jpg';
+import compDesk2 from '../catalog/desksImages/compDesk2.jpg';
+import kitDesk2 from '../catalog/desksImages/kitDesk2.jpg';
+import cofDesk2 from '../catalog/desksImages/cofDesk2.jpg';
+import compDesk3 from '../catalog/desksImages/compDesk3.jpg';
+import kitDesk3 from '../catalog/desksImages/kitDesk3.jpg';
+import cofDesk3 from '../catalog/desksImages/cofDesk3.jpg';
+
+export const deskImages = {
+  1: compDesk1,
+  2: kitDesk1,
+  3: cofDesk1,
+  4: compDesk2,
+  5: kitDesk2,
+  6: cofDesk2,
+  7: compDesk3,
+  8: kitDesk3,
+  9: cofDesk3,
+};
 
 const DeskDetail = () => {
-  console.log(deskData);
   const { id } = useParams();
-  const selectedItem = deskData.find(item => item.id === parseInt(id, 10));
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    getDeskInfo(id)
+      .then((response) => {
+        setSelectedItem(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.error("Помилка під час отримання даних про стіл:", error);
+      });
+  }, [id]);
+
+  if (loading) {
+    return <section className="catalog">
+    {loading && <Loader />}
+    </section>;;
+  }
 
   if (!selectedItem) {
     return <div>Item not found</div>;
   }
 
-  const { imageSrc, type, description, material, price } = selectedItem;
+  const { type, description, material, price } = selectedItem;
+  const imageSrc = deskImages[id];  // використовуйте відповідне зображення
+
 
   return (
     <>

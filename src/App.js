@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="/HomePage" element={<HomePage />} />
         <Route path="/Catalog" element={<Catalog />} />
-        <Route path="/Catalog/:id" element={<DeskDetail />} /> {/* Remove deskData prop */}
+        <Route path="/Catalog/:id" element={<DeskDetail />} /> 
         <Route path="/Cart" element={<div class="cart">soon...</div>} />
       </Routes>
       <Footer />
