@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getDeskInfo } from '../../api'; 
-import { LabelCount, LabelColor } from "./deskDetail.styled.jsx";
+import { LabelCount } from "./deskDetail.styled.jsx";
 import { NavLink } from 'react-router-dom';
 import './deskDetail.css'
 import Loader from '../../loader/loader.jsx';
@@ -14,6 +14,8 @@ import cofDesk2 from '../catalog/desksImages/cofDesk2.jpg';
 import compDesk3 from '../catalog/desksImages/compDesk3.jpg';
 import kitDesk3 from '../catalog/desksImages/kitDesk3.jpg';
 import cofDesk3 from '../catalog/desksImages/cofDesk3.jpg';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/actions'
 
 export const deskImages = {
   1: compDesk1,
@@ -31,6 +33,8 @@ const DeskDetail = () => {
   const { id } = useParams();
   const [selectedItem, setSelectedItem] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [inputValue, setInputValue] = useState("")
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setLoading(true);
@@ -45,6 +49,20 @@ const DeskDetail = () => {
       });
   }, [id]);
 
+  const inputChange = (event) => {
+    const inputValue = event.target.value;
+    setInputValue(inputValue);
+  };
+
+  const handleAddToCart = () => {
+        let amount = 1;
+        if (parseInt(inputValue) > 1) {
+          amount = parseInt(inputValue);
+        }
+        dispatch(addToCart(selectedItem, amount));
+        // alert("Your object added to cart")
+    };
+
   if (loading) {
     return <section className="catalog">
     {loading && <Loader />}
@@ -56,7 +74,7 @@ const DeskDetail = () => {
   }
 
   const { type, description, material, price } = selectedItem;
-  const imageSrc = deskImages[id];  // використовуйте відповідне зображення
+  const imageSrc = deskImages[id];
 
 
   return (
@@ -72,21 +90,25 @@ const DeskDetail = () => {
             <h2 className='detail__type'>{type}</h2>
             <p className='detail__description'>{description}</p>
             <p className='detail__material'>Material: {material}</p>
-            <span className='color__select-text'>Select Color:</span>
+            {/* <span className='color__select-text'>Select Color:</span> */}
             <div className='detail__filters'>
               <LabelCount>
                 Amount:
                 <input
                   type="number"
                   name="countInput"
+                  onChange={inputChange}
+                  id="fname" 
+                  placeholder="1" 
+                  min={1}
                 // value={countInput}
                 // onChange={(e) => setCountInput(e.target.value)}
                 />
               </LabelCount>
-              <LabelColor>
+              {/* <LabelColor>
                 <select
-                  // value={selectedPriceRange}
-                  // onChange={(e) => setSelectedPriceRange(e.target.value)} 
+                  value={selectedPriceRange}
+                  onChange={(e) => setSelectedPriceRange(e.target.value)} 
                   className='color__select'
                 >
                   <option value="White">White</option>
@@ -94,7 +116,7 @@ const DeskDetail = () => {
                   <option value="Grey">Grey</option>
                   <option value="Brown">Brown</option>
                 </select>
-              </LabelColor>
+              </LabelColor> */}
             </div>
           </div>
         </div>
@@ -103,8 +125,12 @@ const DeskDetail = () => {
           <NavLink className="go-back__button" exact to={`/Catalog`}>
           Go Back
         </NavLink>
-        <NavLink className="add-to-cart__button" exact to={`/Cart`}>
+        <NavLink 
+        //  exact to={`/Cart`}
+         >
+          <button className="add-to-cart__button" onClick={handleAddToCart}>
           Add to Cart
+          </button>
         </NavLink>
         </div>
       </section>
