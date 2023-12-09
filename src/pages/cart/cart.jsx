@@ -121,9 +121,6 @@ const Cart = ({
                     <div className="cart__total-price-all">
                         Total: <span className="cart__total-price-all2"> {objectsData.reduce((total, item) => total + calculateTotalAmount(item.deskData.price, item.amount), 0)} $ </span>
                     </div>
-                    <div className="checkout__button" onClick={handleContinue}>
-                        Continue
-                    </div>
                 </div>
             </div>
         </section>

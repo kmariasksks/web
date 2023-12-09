@@ -38,8 +38,6 @@ function App() {
             element={<DeskDetail objectsData={selectedItem} />}
         />
         <Route path="/Cart" element={<Cart />} />
-        <Route path='/Checkout' element={<Checkout/>}/>
-        <Route path='/Success' element={<Success/>}/>
       </Routes>
       <Footer />
     </Router>
