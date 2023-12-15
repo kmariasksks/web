@@ -1,0 +1,33 @@
+@import url(../styles/globals.css);
+
+
+.price__select {
+    margin: 0px 0px 0px 20px;
+    width: 150px;
+    padding: 10px 0px 10px 10px;
+    font-family: "Poppins-Regural";
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.type__select {
+    margin: 0px 0px 0px 20px;
+    width: 160px;
+    padding: 10px 0px 10px 10px;
+    font-family: "Poppins-Regural";
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.material__select {
+    margin: 0px 0px 0px 20px;
+    width: 150px;
+    padding: 10px 0px 10px 10px;
+    font-family: "Poppins-Regural";
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+

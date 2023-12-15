@@ -1,0 +1,138 @@
+.cart__main {
+    display: flex;
+    height: 186px;
+    width: 1220px;
+    border: 3px solid #82BBB5;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 160px;
+    margin-bottom: 20px;
+}
+
+.cart__main-description {
+    display: flex;
+}
+
+.cart__main-sum {
+    display: flex;
+}
+
+.cart__main-img {
+    margin-left: 18px;
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    margin-right: 160px;
+}
+
+.cart__desk-type {
+    font-family: "Poppins-Medium";
+    font-size: 25px;
+    /* margin-right: 230px; */
+}
+
+.cart__desk-plus {
+    height: 40px;
+    width: 40px;
+    border: 2px solid #82BBB5;
+    border-radius: 10px;
+    margin-right: 20px;
+    font-family: "Poppins-Medium";
+    font-size: 20px;
+}
+
+.cart__desk-plus:hover {
+    background-color: #3f3e3e;
+    color: white;
+    border: 2px solid #3f3e3e;
+}
+
+.cart__desk-minus {
+    height: 40px;
+    width: 40px;
+    border: 2px solid #82BBB5;
+    border-radius: 10px;
+    font-family: "Poppins-Medium";
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 30px;
+}
+
+.cart__desk-minus:hover {
+    background-color: #3f3e3e;
+    color: white;
+    border: 2px solid #3f3e3e;
+}
+
+.cart__desk-amount {
+    font-family: "Poppins-Medium";
+    font-size: 20px;
+    margin-top: 8px;
+}
+
+.cart__total-price {
+    font-family: "Poppins-Medium";
+    font-size: 20px;
+    margin-top: 8px;
+    color: rgb(219, 187, 3);
+    margin-right: 20px;
+}
+
+.cart__remove-button {
+    color: #3f3e3e;
+    border: 2px solid #7A7A7A;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-family: "Poppins-Medium";
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    margin-top: 5px;
+    margin-right: 0.5rem;
+}
+
+.cart__total-price-all {
+    font-family: "Poppins-Medium";
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.cart__total-price-all2 {
+    color: rgb(219, 187, 3);
+    margin-left: 30px;
+}
+
+.go-back__button2 {
+    color: #3f3e3e;
+    border: 2px solid #7A7A7A;
+    font-size: 20px;
+    padding: 8px 12px 8px 12px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-family: "Poppins-Medium";
+    width: 95px;
+    height: 30px;
+    text-align: center;
+}
+
+.checkout__button {
+    color: #3f3e3e;
+    border: 2px solid #7A7A7A;
+    font-size: 20px;
+    padding: 8px 12px 8px 12px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-family: "Poppins-Medium";
+    width: 95px;
+    height: 30px;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    justify-content: space-between;
+    margin-left: 300px;
+    margin-bottom: 35px;
+}

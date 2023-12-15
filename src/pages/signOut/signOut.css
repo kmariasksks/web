@@ -1,0 +1,42 @@
+.signout__page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signout__img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+}
+
+.signout__title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.signout__button {
+    background-color: #82BBB5;
+    color: white;
+    border: 2px solid #82BBB5;
+    font-size: 20px;
+    padding: 8px 12px 8px 12px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-family: "Poppins-Medium";
+    width: 140px;
+    height: 50px;
+    margin-bottom: 20px;    
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
